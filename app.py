@@ -1,5 +1,8 @@
 import os
 
+restaurantes = []
+
+
 def exibir_nome_do_programa():
     print("""      
 ░██████╗░█████╗░██████╗░░█████╗░██████╗░  ███████╗██╗░░██╗██████╗░██████╗░███████╗░██████╗░██████╗
@@ -23,17 +26,39 @@ def finalizar_app():
 def opcao_invalida():
     os.system('clear')
     print('Opção inválida\n')
-    input('Digite uma tecla para voltar ao menu principal\n')
+    input('\nDigite uma tecla para voltar ao menu principal')
     main()    
+
+def cadastrar_novo_restaurante():
+    #pass
+    os.system('clear')
+    print('Cadastro de novos restaurantes\n')
+    nome_do_restaurante = input('Digite o nome do restaurante: ')
+    restaurantes.append(nome_do_restaurante)
+    print(f'O restaurante {nome_do_restaurante} cadastrado com sucesso\n')
+    input('\nDigite uma tecla para voltar ao menu principal\n')
+    main()
+
+def listar_restaurantes():
+    os.system('clear')
+    print('Listagem de restaurantes\n')
+    if len(restaurantes) == 0:
+        print('Nenhum restaurante cadastrado\n')
+    else:
+        for restaurante in restaurantes:
+            print(f'{restaurante}\n')
+    input('Digite uma tecla para voltar ao menu principal\n')
+    main()
+
 
 def escolher_opcao():
     try:
         opcao_escolhida = int(input('Escolha uma opção: '))    
         match opcao_escolhida:
             case 1:
-                print('Cadastrar restaurante')
+                cadastrar_novo_restaurante()
             case 2:
-                print('Listar restaurantes')
+                listar_restaurantes()
             case 3:
                 print('Ativar restaurante')
             case 4:
