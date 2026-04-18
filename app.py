@@ -1,6 +1,10 @@
 import os
 
-restaurantes = []
+restaurantes = ['Pizzaria do Bilbão', 
+                'Hamburgueria do Paçoca', 
+                'Sushi Bar da Lola', 
+                'Churrascaria da Josie', 
+                'Restaurante Vegetariano da Fefê']
 
 
 def exibir_nome_do_programa():
@@ -41,12 +45,13 @@ def cadastrar_novo_restaurante():
 
 def listar_restaurantes():
     os.system('clear')
-    print('Listagem de restaurantes\n')
+    print('Listagem de restaurantes')
+    print('------------------------\n')
     if len(restaurantes) == 0:
         print('Nenhum restaurante cadastrado\n')
     else:
         for restaurante in restaurantes:
-            print(f'{restaurante}\n')
+            print(f'- {restaurante}\n')
     input('Digite uma tecla para voltar ao menu principal\n')
     main()
 
