@@ -10,11 +10,12 @@ Exercícios
 
 4 - Imprima a frase: O valor arredondado de pi é: {pi_arredondado} em que o valor de pi precisa ser
  armazenado em uma variável e arredondado para apenas duas casas decimais. 
+
 """
 
 print('Python na Escola de Programação da Alura.')
 
-nome = input('Digite seu nome: ')
+nome = input('Digite seu nome')
 
 idade = input('Digite sua idade')
 
