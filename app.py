@@ -40,6 +40,14 @@ def exibir_subtitulo(texto):
     print(linha + '\n')
 
 def cadastrar_novo_restaurante():
+    '''Esta função faz o cadastro de um novo restaurante
+
+    Inputs:
+        - Nome_do_restaurante: str
+        - Categoria: str
+    Outputs:
+        - Adiciona um novo restaurante à lista de restaurantes
+    '''      
     #pass
     exibir_subtitulo('Cadastro de novos restaurantes')
     nome_do_restaurante = input('Digite o nome do restaurante: ')
@@ -50,6 +58,9 @@ def cadastrar_novo_restaurante():
     voltar_ao_menu_principal()
 
 def listar_restaurantes():
+    '''
+    Esta função lista os restaurantes cadastrados, mostrando nome, categoria e se estão ativos
+    '''  
     exibir_subtitulo('Listagem de restaurantes')
 
     if len(restaurantes) == 0:
@@ -65,6 +76,9 @@ def listar_restaurantes():
     voltar_ao_menu_principal()
 
 def alterar_estado_restaurante():
+    '''
+    Esta função altera o estado do restaurante, ou seja, ativa ou desativa um restaurante cadastrado. 
+    '''  
     exibir_subtitulo('Alterando estado do restaurante')
 
     nome_restaurante = input('Digite o nome do restaurante que deseja ativar / desativar: ')
@@ -84,6 +98,9 @@ def alterar_estado_restaurante():
 
 
 def escolher_opcao():
+    '''
+    Esta função lê a opção escolhida pelo usuário e chama a função correspondente à opção escolhida.
+    '''
     try:
         opcao_escolhida = int(input('Escolha uma opção: '))    
         match opcao_escolhida:
