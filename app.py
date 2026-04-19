@@ -34,12 +34,14 @@ def opcao_invalida():
 
 def exibir_subtitulo(texto):
     os.system('clear')
+    linha = '*' * (len(texto))
+    print(linha)
     print(texto)
+    print(linha + '\n')
 
 def cadastrar_novo_restaurante():
     #pass
     exibir_subtitulo('Cadastro de novos restaurantes')
-    print('------------------------------\n')
     nome_do_restaurante = input('Digite o nome do restaurante: ')
     categoria = input(f'Digite a categoria do restaurante {nome_do_restaurante}: ')
     dados_do_restaurante = {'nome': nome_do_restaurante, 'categoria': categoria, 'ativo': False}
@@ -49,7 +51,6 @@ def cadastrar_novo_restaurante():
 
 def listar_restaurantes():
     exibir_subtitulo('Listagem de restaurantes')
-    print('------------------------\n')
 
     if len(restaurantes) == 0:
         print('Nenhum restaurante cadastrado\n')
@@ -64,7 +65,6 @@ def listar_restaurantes():
 
 def alterar_estado_restaurante():
     exibir_subtitulo('Alterando estado do restaurante')
-    print('----------------------------------\n')
 
     nome_restaurante = input('Digite o nome do restaurante que deseja ativar / desativar: ')
     restaurante_encontrado = False
